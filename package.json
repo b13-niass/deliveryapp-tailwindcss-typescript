@@ -1,0 +1,19 @@
+{
+  "name": "projet-gpdumonde",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npx tailwindcss -i ./dist/css/input.css -o ./dist/css/style.css --watch\" \"tsc --watch\"",
+    "build": "tsc",
+    "start": ""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
