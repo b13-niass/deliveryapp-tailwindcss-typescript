@@ -570,6 +570,10 @@ video {
   visibility: hidden;
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
@@ -703,6 +707,18 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[650px\] {
+  height: 650px;
 }
 
 .min-h-full {
@@ -1246,6 +1262,28 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.error-message {
+  color: red;
+  font-size: 20px;
+  visibility: hidden;
+}
+
+.content.error input {
+  border: 2px solid red !important;
+}
+
+.content.error select {
+  border: 2px solid red !important;
+}
+
+.content.error span {
+  visibility: visible;
+}
+
+.content {
+  flex-wrap: wrap;
 }
 
 .hover\:cursor-pointer:hover {

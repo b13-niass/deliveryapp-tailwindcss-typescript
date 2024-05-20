@@ -1,5 +1,5 @@
-function renderCargaisonPage(){
-  return ` <div class="mx-2 w-[100%] flex lg:flex-nowrap md:flex-nowrap sm:flex-wrap sm2:flex-wrap py-6 sm:px-6 lg:px-8 gap-x-5">
+function renderCargaisonPage() {
+    return ` <div class="mx-2 w-[100%] flex lg:flex-nowrap md:flex-nowrap sm:flex-wrap sm2:flex-wrap py-6 sm:px-6 lg:px-8 gap-x-5">
             <div class="flex-auto lg:w-[25%] md:w-[35%] sm:w-[100%] h-[650px] border-amber-950 bg-white p-8 rounded-lg shadow-lg">
                 <form class="w-[100%]" id="AddCargaisonForm">
                     <!-- Libelle -->
@@ -149,9 +149,8 @@ function renderCargaisonPage(){
             </div>
         </div>`;
 }
-
-function  renderProduitsPage(){
-  return `<div class="flex flex-col gap-y-6 items-center w-[100%] py-5 px-5">
+function renderProduitsPage() {
+    return `<div class="flex flex-col gap-y-6 items-center w-[100%] py-5 px-5">
             <div class="flex flex-wrap w-[100%] max-w-6xl bg-white py-5 px-5">
                 <h2 class="text-2xl w-[100%]">Ajouter un produit</h2>
                 <form class="w-[100%] flex flex-wrap gap-x-6">
@@ -328,9 +327,8 @@ function  renderProduitsPage(){
 
         </div>`;
 }
-
 function renderDetailsCargaisonPage() {
-  return `<div class="flex flex-col gap-y-6 items-center w-[100%] py-5 px-5">
+    return `<div class="flex flex-col gap-y-6 items-center w-[100%] py-5 px-5">
             <div class="w-full max-w-6xl  bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="flex flex-col md:flex-row">
                     <!-- Image Section -->
@@ -458,5 +456,4 @@ function renderDetailsCargaisonPage() {
             </div>
         </div>`;
 }
-
-export {renderProduitsPage, renderCargaisonPage, renderDetailsCargaisonPage};
+export { renderProduitsPage, renderCargaisonPage, renderDetailsCargaisonPage };
