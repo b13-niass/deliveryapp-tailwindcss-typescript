@@ -1,5 +1,5 @@
-import {cargaisons} from "./cargaisons.js";
-import {produits} from "./produits.js";
+import {cargaisonsTraitement} from "./cargaisons.js";
+import {produitsTraitement} from "./produits.js";
 import  {renderCargaisonPage, renderProduitsPage, renderDetailsCargaisonPage} from "./pages.js";
 
 const mainContent = document.querySelector("#main-content") as HTMLElement;
@@ -9,12 +9,18 @@ function renderPage(page: string | undefined){
   switch (page){
     case 'cargaisons':
       mainContent.innerHTML = renderCargaisonPage();
+        cargaisonsTraitement();
+        break;
     case 'produits':
       mainContent.innerHTML = renderProduitsPage();
+        produitsTraitement();
+        break;
     case 'detailsCargaison':
       mainContent.innerHTML = renderDetailsCargaisonPage();
+      break;
     default:
       mainContent.innerHTML = renderCargaisonPage();
+      break;
   }
 }
 

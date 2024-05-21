@@ -30,3 +30,14 @@ export interface IRoutiere{
    distance: number,
    etat: number,
 }
+
+export interface ICargaison{
+   id: number,
+   libelle: string,
+   typec: number,
+   dateDepart: string,
+   dateArrive: string,
+   image: string,
+   distance: number,
+   etat: number,
+}

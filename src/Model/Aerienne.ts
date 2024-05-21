@@ -26,7 +26,7 @@ export class Aerienne extends Cargaison{
   }
   ajouterCargaison(): number {
     let cargaison : IAerrienne = {
-      id: this.getId() as number,
+      id: Cargaison.getLastId() + 1,
       libelle : this.getLibelle() as string,
       dateArrive : this.getDateArrive() as string,
       dateDepart : this.getDateDepart() as string,
@@ -103,12 +103,6 @@ export class Aerienne extends Cargaison{
   listerLesProduits(): Produit[] {
     let produits: Produit[] = [];
     DB.produits.alimentaire.forEach((prod) => {
-      if (prod.cargaison == this.getId()){
-        produits.push(prod as any);
-      }
-    })
-
-    DB.produits.chimique.forEach((prod) => {
       if (prod.cargaison == this.getId()){
         produits.push(prod as any);
       }

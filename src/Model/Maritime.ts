@@ -28,7 +28,7 @@ export class Maritime extends Cargaison{
   }
   ajouterCargaison(): number {
     let cargaison : IMaritime = {
-      id: this.getId() as number,
+      id: Cargaison.getLastId() + 1,
       libelle : this.getLibelle() as string,
       dateArrive : this.getDateArrive() as string,
       dateDepart : this.getDateDepart() as string,

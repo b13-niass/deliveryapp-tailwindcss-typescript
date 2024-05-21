@@ -27,7 +27,7 @@ export class Routiere extends Cargaison{
   }
   ajouterCargaison(): number {
     let cargaison : IRoutiere = {
-      id: this.getId() as number,
+      id: Cargaison.getLastId() + 1,
       libelle : this.getLibelle() as string,
       dateArrive : this.getDateArrive() as string,
       dateDepart : this.getDateDepart() as string,
@@ -111,12 +111,6 @@ export class Routiere extends Cargaison{
       }
     })
 
-    DB.produits.chimique.forEach((prod) => {
-      if (prod.cargaison == this.getId()){
-        produits.push(prod as any);
-      }
-    })
-
     DB.produits.materiel.incassable.forEach((prod) => {
       if (prod.cargaison == this.getId()){
         produits.push(prod as any);
@@ -128,6 +122,7 @@ export class Routiere extends Cargaison{
         produits.push(prod as any);
       }
     })
+    // console.log(produits);
     return produits;
   }
 
@@ -163,6 +158,7 @@ export class Routiere extends Cargaison{
         }
       })
     }
+
     return result;
   }
 }

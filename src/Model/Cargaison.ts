@@ -1,4 +1,6 @@
 import { Produit } from "./Produit.js";
+import { DB } from "../DB.js";
+import { ICargaison } from "./ICargaison.js";
 
 export abstract class Cargaison{
   // protected id?: number;
@@ -111,4 +113,15 @@ export abstract class Cargaison{
   abstract nbrDeProduit():number;
   abstract supprimerProduit(produit: Produit):number;
   abstract listerLesProduits():Produit[];
+  abstract cargaisonParId(id: number): Cargaison;
+  abstract supprimerCargaison(): number;
+  abstract ajouterCargaison(): number;
+  abstract modifierCargaison(): number;
+
+  static getLastId(): number{
+    return this.getAllCargaison().reduce((max, item) => item.id > max ? item.id : max, this.getAllCargaison()[0].id);
+  }
+static getAllCargaison(): ICargaison[]{
+    return [...DB.cargaison.aerienne.values, ...DB.cargaison.maritime.values,...DB.cargaison.routiere.values];
+  }
 }

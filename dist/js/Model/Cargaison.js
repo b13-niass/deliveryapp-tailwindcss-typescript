@@ -1,3 +1,4 @@
+import { DB } from "../DB.js";
 export class Cargaison {
     id;
     libelle;
@@ -76,5 +77,11 @@ export class Cargaison {
             distance: this.getDistance(),
             etat: this.getEtat()
         };
+    }
+    static getLastId() {
+        return this.getAllCargaison().reduce((max, item) => item.id > max ? item.id : max, this.getAllCargaison()[0].id);
+    }
+    static getAllCargaison() {
+        return [...DB.cargaison.aerienne.values, ...DB.cargaison.maritime.values, ...DB.cargaison.routiere.values];
     }
 }

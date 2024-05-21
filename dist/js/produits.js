@@ -1,2 +1,2 @@
-export function produits() {
+export function produitsTraitement() {
 }

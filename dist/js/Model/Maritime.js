@@ -19,7 +19,7 @@ export class Maritime extends Cargaison {
     }
     ajouterCargaison() {
         let cargaison = {
-            id: this.getId(),
+            id: Cargaison.getLastId() + 1,
             libelle: this.getLibelle(),
             dateArrive: this.getDateArrive(),
             dateDepart: this.getDateDepart(),

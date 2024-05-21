@@ -1,56 +1,54 @@
 function renderCargaisonPage(){
   return ` <div class="mx-2 w-[100%] flex lg:flex-nowrap md:flex-nowrap sm:flex-wrap sm2:flex-wrap py-6 sm:px-6 lg:px-8 gap-x-5">
-            <div class="flex-auto lg:w-[25%] md:w-[35%] sm:w-[100%] h-[650px] border-amber-950 bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex-auto lg:w-[25%] md:w-[35%] sm:w-[100%] h-[700px] border-amber-950 bg-white p-8 rounded-lg shadow-lg">
                 <form class="w-[100%]" id="AddCargaisonForm">
                     <!-- Libelle -->
-                    <div class="mb-4 content content">
+                    <div class="content content">
                         <label for="libelle" class="block text-sm font-medium text-gray-700">Libelle</label>
                         <input type="text" id="libelle" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <span class="error-message">error</span>
                     </div>
 
                     <!-- Type -->
-                    <div class="mb-4 content">
+                    <div class="content">
                         <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
                         <select id="type" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             <option value="">Sélectionner un type</option>
-                            <option value="type1">Type 1</option>
-                            <option value="type2">Type 2</option>
-                            <option value="type3">Type 3</option>
+                            <option value="1">Routiere</option>
+                            <option value="2">Maritime</option>
+                            <option value="3">Aerienne</option>
                         </select>
                         <span class="error-message">error</span>
                     </div>
 
                     <!-- Date de départ -->
-                    <div class="mb-4 content">
+                    <div class="content">
                         <label for="date-depart" class="block text-sm font-medium text-gray-700">Date de départ</label>
                         <input type="date" id="date-depart" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <span class="error-message">error</span>
                     </div>
 
                     <!-- Date d'arrivée -->
-                    <div class="mb-4 content">
+                    <div class="content">
                         <label for="date-arrivee" class="block text-sm font-medium text-gray-700">Date d'arrivée</label>
                         <input type="date" id="date-arrivee" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <span class="error-message">error</span>
                     </div>
 
-                    <!-- Image -->
-                    <div class="mb-4 content">
-                        <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-                        <input type="text" id="image" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <div class="content">
+                        <label for="distance" class="block text-sm font-medium text-gray-700">Distance</label>
+                        <input type="text" id="distance" class="form-control mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <span class="error-message">error</span>
                     </div>
-
-                    <!--                    <div class="relative flex gap-x-3">-->
-                    <!--                        <div class="flex h-6 items-center">-->
-                    <!--                            <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">-->
-                    <!--                        </div>-->
-                    <!--                        <div class="text-sm leading-6">-->
-                    <!--                            <label for="comments" class="font-medium text-gray-900">M</label>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
+                    <!-- Image -->
+                    <div class="content">
+                        <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                        <input type="text" id="image" class="form-control image-cargaison-input mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <span class="error-message">error</span>
+                    </div>
+                    <div class="w-[50px] h-[50px] mb-2">
+                      <img src="https://placehold.co/50" id="image-cargaison" alt="" srcset="">
+                    </div>
                     <!-- Button -->
                     <div class="text-center">
                         <button class="w-full px-4 py-2 bg-gray-800 text-white font-medium rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Enregistrer</button>
@@ -67,84 +65,13 @@ function renderCargaisonPage(){
                     </div>
                     <select class="border w-[20%] border-gray-300 rounded-md px-4 py-2 appearance-none focus:outline-none focus:ring focus:border-blue-500">
                         <option value="" selected disabled>Type de cargaison</option>
-                        <option value="type1">Type 1</option>
-                        <option value="type2">Type 2</option>
-                        <option value="type3">Type 3</option>
+                        <option value="1">Routiere</option>
+                        <option value="2">Maritime</option>
+                        <option value="3">Aerienne</option>
                     </select>
                 </div>
-
-                <div class="lg:w-[30%] hover:cursor-pointer hover:border-2 hover:border-borderCard
-                h-[400px] bg-white shadow-lg hover:shadow-beautiful-hover rounded-lg overflow-hidden">
-                    <!-- <img class="w-full h-32 object-cover" src="https://via.placeholder.com/300x200" alt="Card Image">-->
-
-                    <img class="w-full h-[50%] object-cover" src="https://www.innovation24.news/wp-content/uploads/2020/01/shutterstock_1048692464.jpg" alt="Card Image">
-                    <div class="p-4">
-                        <div class="text-sm text-gray-500">Date début: 01/01/2024</div>
-                        <div class="text-sm text-gray-500">Date fin: 31/12/2024</div>
-                        <h2 class="mt-2 text-lg font-bold text-gray-800">Maritime</h2>
-                        <div class="flex flex-wrap mt-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 1</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 2</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 3</span>
-                        </div>
-                        <div class="mt-2 text-gray-700 font-bold">
-                            Progression: <span class="text-green-600">75%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-[30%] hover:cursor-pointer hover:border-2 hover:border-borderCard
-                h-[400px] bg-white shadow-lg hover:shadow-beautiful-hover rounded-lg overflow-hidden">
-                    <!--                    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/300x200" alt="Card Image">-->
-                    <img class="w-full h-[50%] object-cover" src="https://www.lemoci.com/wp-content/uploads/2020/05/bollore-logistics-lvmh-pont-aerien-chine-29-mars-2020-roissy-cdg-scaled.jpg" alt="Card Image">
-                    <div class="p-4">
-                        <div class="text-sm text-gray-500">Date début: 01/01/2024</div>
-                        <div class="text-sm text-gray-500">Date fin: 31/12/2024</div>
-                        <h2 class="mt-2 text-lg font-bold text-gray-800">Aérienne</h2>
-                        <div class="flex flex-wrap mt-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 1</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 2</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 3</span>
-                        </div>
-                        <div class="mt-2 text-gray-700 font-bold">
-                            Progression: <span class="text-green-600">75%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-[30%] hover:cursor-pointer hover:border-2 hover:border-borderCard
-                h-[400px] bg-white shadow-lg hover:shadow-beautiful-hover rounded-lg overflow-hidden">
-                    <!--                    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/300x200" alt="Card Image">-->
-                    <img class="w-full h-[50%] object-cover" src="https://www.lemoci.com/wp-content/uploads/2020/05/bollore-logistics-lvmh-pont-aerien-chine-29-mars-2020-roissy-cdg-scaled.jpg" alt="Card Image">
-                    <div class="p-4">
-                        <div class="text-sm text-gray-500">Date début: 01/01/2024</div>
-                        <div class="text-sm text-gray-500">Date fin: 31/12/2024</div>
-                        <h2 class="mt-2 text-lg font-bold text-gray-800">Aérienne</h2>
-                        <div class="flex flex-wrap mt-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 1</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 2</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 3</span>
-                        </div>
-                        <div class="mt-2 text-gray-700 font-bold">
-                            Progression: <span class="text-green-600">75%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-[30%] hover:cursor-pointer hover:border-2 hover:border-borderCard
-                h-[400px] bg-white shadow-lg hover:shadow-beautiful-hover rounded-lg overflow-hidden">
-                    <!--                    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/300x200" alt="Card Image">-->
-                    <img class="w-full h-[50%] object-cover" src="https://www.lemoci.com/wp-content/uploads/2020/05/bollore-logistics-lvmh-pont-aerien-chine-29-mars-2020-roissy-cdg-scaled.jpg" alt="Card Image">
-                    <div class="p-4">
-                        <div class="text-sm text-gray-500">Date début: 01/01/2024</div>
-                        <div class="text-sm text-gray-500">Date fin: 31/12/2024</div>
-                        <h2 class="mt-2 text-lg font-bold text-gray-800">Aérienne</h2>
-                        <div class="flex flex-wrap mt-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 1</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 2</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold mr-1 mb-1 px-2.5 py-0.5 rounded">Badge 3</span>
-                        </div>
-                        <div class="mt-2 text-gray-700 font-bold">
-                            Progression: <span class="text-green-600">75%</span>
-                        </div>
-                    </div>
+                <div id="listeCargaisonContent" class="flex flex-wrap sm:w-[100%] md:w-[100%] flex gap-x-6 gap-y-6 lg:w-[100%] ">
+                
                 </div>
             </div>
         </div>`;
