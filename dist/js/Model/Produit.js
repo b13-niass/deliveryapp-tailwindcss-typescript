@@ -67,4 +67,10 @@ export class Produit {
         return produits;
     }
     ;
+    static getLastId() {
+        return this.getAllProduits().reduce((max, item) => item.id > max ? item.id : max, this.getAllProduits()[0].id);
+    }
+    static getAllProduits() {
+        return [...DB.produits.alimentaire, ...DB.produits.materiel.fragile, ...DB.produits.materiel.incassable, ...DB.produits.chimique];
+    }
 }

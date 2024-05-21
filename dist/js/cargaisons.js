@@ -66,7 +66,6 @@ export function cargaisonsTraitement() {
     `;
     };
     const buildListCargaison = () => {
-        listeCargaisons = Cargaison.getAllCargaison();
         listeCargaisons.forEach((cargaison) => {
             listeCargaisonContent.insertAdjacentHTML("beforeend", templateListCargaison(cargaison));
         });
@@ -153,6 +152,7 @@ export function cargaisonsTraitement() {
             uneCargE.remove();
         });
     }
+    listeCargaisons = Cargaison.getAllCargaison();
     buildListCargaison();
     imageCargaisonInput.addEventListener("input", (e) => {
         imageCargaison.src = imageCargaisonInput.value;
@@ -195,6 +195,7 @@ export function cargaisonsTraitement() {
             image.value = "";
             imageCargaison.src = "https://placehold.co/50";
             removeListElement();
+            listeCargaisons = Cargaison.getAllCargaison();
             buildListCargaison();
         }
     });

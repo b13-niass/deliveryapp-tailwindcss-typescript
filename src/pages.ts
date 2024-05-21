@@ -79,51 +79,60 @@ function renderCargaisonPage(){
 
 function  renderProduitsPage(){
   return `<div class="flex flex-col gap-y-6 items-center w-[100%] py-5 px-5">
+<!--<button id="openModalBtn" class="px-4 py-2 bg-blue-500 text-white rounded">Open Modal</button>-->
             <div class="flex flex-wrap w-[100%] max-w-6xl bg-white py-5 px-5">
                 <h2 class="text-2xl w-[100%]">Ajouter un produit</h2>
-                <form class="w-[100%] flex flex-wrap gap-x-6">
+                <form id="addProduitForm" class="w-[100%] flex flex-wrap gap-x-6">
                     <!-- Libelle -->
-                    <div class="w-[30%]">
-                        <label for="libelle" class="block text-sm font-medium text-gray-700">Nom Produits</label>
-                        <input type="text" id="libelle" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <span class="text-red-600 text-[0.8rem]">Error</span>
+                    <div class="content w-[30%]">
+                        <label for="libellep" class="block text-sm font-medium text-gray-700">Nom Produits</label>
+                        <input type="text" id="libellep" class="form-control1 mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <span class="error-message">error</span>
                     </div>
 
                     <!-- Type -->
-                    <div class="w-[30%]">
-                        <label for="type" class="block text-sm font-medium text-gray-700">Type</label>
-                        <select id="type" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    <div class="content w-[30%]">
+                        <label for="typep" class="block text-sm font-medium text-gray-700">Type</label>
+                        <select id="typep" class="form-control1 mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             <option value="">Sélectionner un type</option>
-                            <option value="type1">Type 1</option>
-                            <option value="type2">Type 2</option>
-                            <option value="type3">Type 3</option>
+                            <option value="1">Alimentaire</option>
+                            <option value="2">Chimique</option>
+                            <option value="3">Materiel Fragile</option>
+                            <option value="3">Materiel Incassable</option>
                         </select>
-                        <span class="text-red-600 text-[0.8rem]">Error</span>
+                        <span class="error-message">error</span>
                     </div>
                     <!-- Libelle -->
-                    <div class="w-[30%]">
-                        <label for="poids" class="block text-sm font-medium text-gray-700">Le poids</label>
-                        <input type="text" id="poids" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <span class="text-red-600 text-[0.8rem]">Error</span>
+                    <div class="content w-[30%]">
+                        <label for="poidsp" class="block text-sm font-medium text-gray-700">Le poids</label>
+                        <input type="text" id="poidsp" class="form-control1 mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <span class="error-message">error</span>
                     </div>
                     <!-- Image -->
-                    <div class="w-[30%]">
-                        <span for="" class="block invisible text-sm font-medium text-gray-700">label-invisible</span>
+                    <div class="content w-[30%]">
+<!--                        <span for="" class="block invisible text-sm font-medium text-gray-700">label-invisible</span>-->
 
-                        <label for="image" class="custom-file-label bg-gray-800 hover:bg-gray-700 text-white font-semibold inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                            </svg>
-                            Upload Image
-                        </label>
-                        <input type="file" id="image" class="custom-file-input" accept="image/*">
+<!--                        <label for="image" class="custom-file-label bg-gray-800 hover:bg-gray-700 text-white font-semibold inline-flex items-center">-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />-->
+<!--                            </svg>-->
+<!--                            Upload Image-->
+<!--                        </label>-->
+<!--                        <input type="file" id="image" class="custom-file-input" accept="image/*">-->
+                        <label for="imagep" class="block text-sm font-medium text-gray-700">images</label>
+                        <input type="text" id="imagep" class="form-control1 mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <span class="error-message">error</span>
+                    </div>
+                    <div class="w-[100px] h-[100px] mb-2">
+                      <img src="https://placehold.co/50" id="image-produit" alt="" srcset="">
                     </div>
                     <!-- Libelle -->
-                    <div class="w-[30%] invisible">
-                        <label for="" class="block text-sm font-medium text-gray-700">Toxicité</label>
-                        <input type="text" id="" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <span class="text-red-600 text-[0.8rem]">Error</span>
+                    <div class="w-[30%] hidden" id="toxiciteChange">
+                        <label for="toxicite" class="block text-sm font-medium text-gray-700">Toxicité</label>
+                        <input type="text" id="toxicite" value="-1" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <span class="error-message">error</span>
                     </div>
+
                     <!-- Button -->
                     <div class="text-center  w-[100%] flex justify-start">
                         <button type="submit" class="w-[10%] px-4 py-2 bg-gray-800 text-white font-medium rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Enregistrer</button>
@@ -144,9 +153,10 @@ function  renderProduitsPage(){
                         </div>
                         <select class="border w-[18%] border-gray-300 rounded-md px-4 py-2 appearance-none focus:outline-none focus:ring focus:border-blue-500">
                             <option value="" selected disabled>Type de Produits</option>
-                            <option value="type1">Type 1</option>
-                            <option value="type2">Type 2</option>
-                            <option value="type3">Type 3</option>
+                            <option value="1">Alimentaire</option>
+                            <option value="2">Chimique</option>
+                            <option value="3">Materiel Fragile</option>
+                            <option value="3">Materiel Incassable</option>
                         </select>
                     </div>
                 </div>
@@ -159,83 +169,11 @@ function  renderProduitsPage(){
                             <th class="w-24 px-4 py-2 text-left text-gray-600 font-semibold">Image</th>
                             <th class="px-4 py-2 text-left text-gray-600 font-semibold">Libellé</th>
                             <th class="px-4 py-2 text-left text-gray-600 font-semibold">Poids</th>
-                            <th class="px-4 py-2 text-left text-gray-600 font-semibold">Status</th>
+                            <th class="px-4 py-2 text-left text-gray-600 font-semibold">Types</th>
                             <th class="px-4 py-2 text-left text-gray-600 font-semibold">Action</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <!-- Example Row 1 -->
-                        <tr class="border-b">
-                            <td class="w-24 px-4 py-2">
-                                <img src="https://via.placeholder.com/50" alt="Product Image" class="rounded">
-                            </td>
-                            <td class="px-4 py-2">Product A</td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-blue-200 text-blue-800 text-sm px-2 rounded-full">2kg</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-green-200 text-green-800 text-sm px-2 rounded-full">Available</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <button class="bg-gray-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Modifier
-                                </button>
-                                <button class="bg-red-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    supprimer
-                                </button>
-                                <button class="bg-emerald-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Affecter
-                                </button>
-                            </td>
-                        </tr>
-                        <!-- Example Row 2 -->
-                        <tr class="border-b">
-                            <td class="w-24 px-4 py-2">
-                                <img src="https://via.placeholder.com/50" alt="Product Image" class="rounded">
-                            </td>
-                            <td class="px-4 py-2">Product B</td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-blue-200 text-blue-800 text-sm px-2 rounded-full">1.5kg</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-red-200 text-red-800 text-sm px-2 rounded-full">Out of Stock</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <button class="bg-gray-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Modifier
-                                </button>
-                                <button class="bg-red-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    supprimer
-                                </button>
-                                <button class="bg-emerald-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Affecter
-                                </button>
-                            </td>
-                        </tr>
-                        <!-- Example Row 3 -->
-                        <tr class="border-b">
-                            <td class="w-24 px-4 py-2">
-                                <img src="https://via.placeholder.com/50" alt="Product Image" class="rounded">
-                            </td>
-                            <td class="px-4 py-2">Product C</td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-blue-200 text-blue-800 text-sm px-2 rounded-full">3kg</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span class="inline-block bg-yellow-200 text-yellow-800 text-sm px-2 rounded-full">Limited</span>
-                            </td>
-                            <td class="px-4 py-2">
-                                <button class="bg-gray-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Modifier
-                                </button>
-                                <button class="bg-red-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    supprimer
-                                </button>
-                                <button class="bg-emerald-800 font-semibold text-white py-1 px-2 border border-transparent rounded">
-                                    Affecter
-                                </button>
-                            </td>
-                        </tr>
+                        <tbody id="listeProduitContent">
                         </tbody>
                     </table>
                 </div>

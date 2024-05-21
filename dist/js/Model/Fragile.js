@@ -1,4 +1,5 @@
 import { Materiel } from "./Materiel.js";
+import { Produit } from "./Produit.js";
 import { DB } from "../DB.js";
 export class Fragile extends Materiel {
     constructor(id, libelle, typep, poids, image, cargaison) {
@@ -26,7 +27,7 @@ export class Fragile extends Materiel {
     }
     ajouterProduits() {
         let produit = {
-            id: this.getId(),
+            id: Produit.getLastId() + 1,
             libelle: this.getLibelle(),
             cargaison: this.getCargaison(),
             poids: this.getPoids(),

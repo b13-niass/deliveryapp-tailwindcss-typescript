@@ -29,7 +29,7 @@ export class Alimentaire extends Produit{
   }
   ajouterProduits(): number {
     let produit : alimentaireType = {
-      id: this.getId() as number,
+      id: Produit.getLastId() + 1,
       libelle : this.getLibelle() as string,
       cargaison : this.getCargaison() as number,
       poids : this.getPoids() as number,

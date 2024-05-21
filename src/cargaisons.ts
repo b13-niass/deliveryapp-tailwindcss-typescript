@@ -75,7 +75,7 @@ export function cargaisonsTraitement() {
   };
 
   const buildListCargaison = () => {
-    listeCargaisons = Cargaison.getAllCargaison();
+    // listeCargaisons = Cargaison.getAllCargaison();
     listeCargaisons.forEach((cargaison) => {
       listeCargaisonContent.insertAdjacentHTML(
         "beforeend",
@@ -211,7 +211,7 @@ export function cargaisonsTraitement() {
 
   /** Initialisations **/
 
-  // listeCargaisons = Cargaison.getAllCargaison();
+  listeCargaisons = Cargaison.getAllCargaison();
   buildListCargaison();
   /** Déclaration des Événements**/
 
@@ -260,6 +260,7 @@ export function cargaisonsTraitement() {
       imageCargaison.src = "https://placehold.co/50";
         // Pile de Call
       removeListElement()
+      listeCargaisons = Cargaison.getAllCargaison();
       buildListCargaison();
 
     }

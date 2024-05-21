@@ -32,7 +32,7 @@ export class Fragile extends Materiel{
   }
   ajouterProduits(): number {
     let produit : fragileType = {
-      id: this.getId() as number,
+      id: Produit.getLastId() + 1,
       libelle : this.getLibelle() as string,
       cargaison : this.getCargaison() as number,
       poids : this.getPoids() as number,

@@ -1,4 +1,6 @@
 import { DB } from "../DB.js";
+import { ICargaison } from "./ICargaison";
+import { produitTypeComplete } from "./IProduits";
 
 export abstract class Produit{
   // protected id?:number;
@@ -85,6 +87,14 @@ export abstract class Produit{
   abstract ajouterProduits():number;
   abstract modifierProduits(): number;
   abstract affecterProduit(cargaison:number): number;
+
+
+  static getLastId(): number{
+    return this.getAllProduits().reduce((max, item) => item.id > max ? item.id : max, this.getAllProduits()[0].id);
+  }
+  static getAllProduits(): produitTypeComplete[]{
+    return [...DB.produits.alimentaire, ...DB.produits.materiel.fragile,...DB.produits.materiel.incassable, ...DB.produits.chimique];
+  }
 
 }
 

@@ -40,7 +40,7 @@ export class Chimique extends Produit{
     }
     ajouterProduits(): number {
         let produit : chimiqueType = {
-            id: this.getId() as number,
+            id: Produit.getLastId() + 1,
             libelle : this.getLibelle() as string,
             cargaison : this.getCargaison() as number,
             poids : this.getPoids() as number,

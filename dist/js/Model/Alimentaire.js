@@ -26,7 +26,7 @@ export class Alimentaire extends Produit {
     }
     ajouterProduits() {
         let produit = {
-            id: this.getId(),
+            id: Produit.getLastId() + 1,
             libelle: this.getLibelle(),
             cargaison: this.getCargaison(),
             poids: this.getPoids(),
